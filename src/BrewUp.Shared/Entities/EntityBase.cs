@@ -21,9 +21,9 @@ public abstract class EntityBase : IEquatable<EntityBase>
 
   public static bool operator ==(EntityBase? entity1, EntityBase? entity2)
   {
-    if ((object?)entity1 == null && (object?)entity2 == null)
+    if ((object)entity1 == null && (object)entity2 == null)
       return true;
-    if ((object?)entity1 == null || (object?)entity2 == null)
+    if ((object)entity1 == null || (object)entity2 == null)
       return false;
       
     return entity1.GetType() == entity2.GetType() && entity1.Id == entity2.Id;
