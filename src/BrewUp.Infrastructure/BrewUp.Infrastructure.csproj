@@ -9,11 +9,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
+    <PackageReference Include="Muflone.Eventstore" Version="6.1.1" />
+    <PackageReference Include="Muflone.Saga.Persistence.MongoDb" Version="6.0.0" />
+    <PackageReference Include="Muflone.Transport.RabbitMQ.Saga" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BrewUp.DomainModel\BrewUp.DomainModel.csproj" />
     <ProjectReference Include="..\BrewUp.Shared\BrewUp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="RabbitMq\" />
   </ItemGroup>
 
 </Project>
