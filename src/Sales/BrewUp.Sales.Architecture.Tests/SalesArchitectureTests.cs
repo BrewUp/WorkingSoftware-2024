@@ -1,9 +1,9 @@
-using NetArchTest.Rules;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using BrewUp.Sales.Facade;
+using NetArchTest.Rules;
 
-namespace BrewUp.Saless.Architecture.Tests;
+namespace BrewUp.Sales.Architecture.Tests;
 
 [ExcludeFromCodeCoverage]
 public class SalesArchitectureTests
