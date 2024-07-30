@@ -10,7 +10,6 @@ namespace BrewUp.Sales.Domain.Entities;
 
 public class SalesOrder : AggregateRoot
 {
-	internal SalesOrderId _salesOrderId;
 	internal SalesOrderNumber _salesOrderNumber;
 	internal OrderDate _orderDate;
 
@@ -39,7 +38,7 @@ public class SalesOrder : AggregateRoot
 
 	private void Apply(SalesOrderCreated @event)
 	{
-		_salesOrderId = @event.SalesOrderId;
+		Id = @event.SalesOrderId;
 		_salesOrderNumber = @event.SalesOrderNumber;
 		_orderDate = @event.OrderDate;
 		_customerId = @event.CustomerId;
