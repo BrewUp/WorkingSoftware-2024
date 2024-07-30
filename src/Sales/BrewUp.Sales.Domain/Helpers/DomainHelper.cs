@@ -1,4 +1,5 @@
 ﻿using BrewUp.Sales.Domain.Entities;
+using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
 using BrewUp.Shared.DomainIds;
@@ -19,7 +20,7 @@ public static class DomainHelper
 
 	internal static ReadModel.Dtos.SalesOrder MapToReadModel(this SalesOrder salesOrder)
 	{
-		return ReadModel.Dtos.SalesOrder.CreateSalesOrder(salesOrder._salesOrderId, salesOrder._salesOrderNumber,
+		return ReadModel.Dtos.SalesOrder.CreateSalesOrder((SalesOrderId)salesOrder.Id, salesOrder._salesOrderNumber,
 						salesOrder._customerId, salesOrder._customerName, salesOrder._orderDate,
 									salesOrder._rows.Select(r => new SalesOrderRowJson
 									{
