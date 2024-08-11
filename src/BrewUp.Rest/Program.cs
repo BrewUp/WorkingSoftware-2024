@@ -53,9 +53,14 @@ app.UseCors("CorsPolicy");
 
 //Sales
 var salesGroup = app.MapGroup("/v1/sales/").WithTags("Sales");
+salesGroup.MapPost("/", SalesService.HandleCreateSalesOrder)
+	.Produces(StatusCodes.Status400BadRequest)
+	.Produces(StatusCodes.Status201Created)
+	.WithName("CreateSalesOrder");
+
 salesGroup.MapGet("/", SalesService.HandleGetOrders)
-	//.Produces(StatusCodes.Status404NotFound)
-	//.Produces(StatusCodes.Status200OK)
+	.Produces(StatusCodes.Status404NotFound)
+	.Produces(StatusCodes.Status200OK)
 	.WithName("GetSalesOrders");
 
 //Warehouses
@@ -76,4 +81,4 @@ app.UseSwaggerUI(s =>
 	s.RoutePrefix = "documentation";
 });
 
-app.Run();
+await app.RunAsync();
