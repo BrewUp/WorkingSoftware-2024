@@ -10,16 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a25cc4-e9dd-4cf4-be08-99c817a38d15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BrewUp.Rest.Tests/AppHttpClientFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Rest.Tests/BrewUp.Rest.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Rest.Tests/IntegrationCollectionFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Rest.Tests/SalesTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BrewUp.Rest.Tests/appsettings-tests.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Sales/SalesOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Sales/SalesOrder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Sales/SalesOrderRow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Sales/SalesOrderRow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Warehouses/Availability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.DomainModel/Entities/Warehouses/Availability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BrewUp.Rest/Services/SalesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.Rest/Services/SalesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +38,10 @@
     &quot;accountId&quot;: &quot;71ab4d5f-a7b1-4d08-b5ea-76377bf244e9&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Runtime/ExceptionServices/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -55,25 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;01-awful__monolith&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "24371155-c758-4add-bbb3-850ed3a5df5b.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "01-awful__monolith",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\acr\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\acr\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\acr\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\acr\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\acr\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\acr\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BrewUp.Rest: IIS Express">
     <configuration name="BrewUp.Rest: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BrewUp.Rest/BrewUp.Rest.csproj" />
@@ -135,7 +132,7 @@
       <workItem from="1722349312572" duration="1131000" />
       <workItem from="1723381981800" duration="2159000" />
       <workItem from="1723563117271" duration="3379000" />
-      <workItem from="1724062265067" duration="1593000" />
+      <workItem from="1724062265067" duration="2277000" />
     </task>
     <servers />
   </component>
@@ -145,5 +142,37 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BrewUp.Rest.Tests/SalesTests.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\Sviluppo\Ace68\WorkingSoftware-2024\src\BrewUp.Rest.Tests\SalesTests.cs" containingFunctionPresentation="Method 'Can_Create_SalesOrder'">
+            <startOffsets>
+              <option value="926" />
+            </startOffsets>
+            <endOffsets>
+              <option value="974" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BrewUp.Rest/Services/SalesService.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Sviluppo\Ace68\WorkingSoftware-2024\src\BrewUp.Rest\Services\SalesService.cs" containingFunctionPresentation="Method 'HandleCreateSalesOrder'">
+            <startOffsets>
+              <option value="624" />
+            </startOffsets>
+            <endOffsets>
+              <option value="654" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

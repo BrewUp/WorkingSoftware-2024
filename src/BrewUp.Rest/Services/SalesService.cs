@@ -11,7 +11,7 @@ namespace BrewUp.Rest.Services;
 
 public static class SalesService 
 {
-	public static async Task<string> HandleCreateSalesOrder(ISalesDomainService salesDomainService,
+	public static async Task<IResult> HandleCreateSalesOrder(ISalesDomainService salesDomainService,
 		IQueries<Availability> warehouseService,
 		SalesOrderJson body,
 		CancellationToken cancellationToken)
@@ -31,7 +31,7 @@ public static class SalesService
 			new CustomerId(body.CustomerId), new CustomerName(body.CustomerName),
 			body.Rows, cancellationToken);
 
-		return body.SalesOrderId;
+		return Results.Created($"v1/sales/{body.SalesOrderId}", cancellationToken);
 	}
 		
 	public static async Task<Results<Ok<PagedResult<SalesOrderJson>>, NotFound>> HandleGetOrders(ISalesQueryService salesQueryService, CancellationToken cancellationToken)
