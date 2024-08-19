@@ -4,11 +4,11 @@ namespace BrewUp.DomainModel.Entities.Sales;
 
 public class SalesOrderRow
 {
-	internal readonly BeerId _beerId;
-	internal readonly BeerName _beerName;
+	internal readonly BeerId _beerId = default!;
+	internal readonly BeerName _beerName = default!;
 
-	internal readonly Quantity _quantity;
-	internal readonly Price _beerPrice;
+	internal readonly Quantity _quantity = default!;
+	internal readonly Price _beerPrice = default!;
 
 	protected SalesOrderRow()
 	{

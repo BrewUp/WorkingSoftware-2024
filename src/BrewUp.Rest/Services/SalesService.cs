@@ -12,14 +12,14 @@ namespace BrewUp.Rest.Services;
 public static class SalesService 
 {
 	public static async Task<string> HandleCreateSalesOrder(ISalesDomainService salesDomainService,
-		IQueries<Availability> availabilityServices,
+		IQueries<Availability> warehouseService,
 		SalesOrderJson body,
 		CancellationToken cancellationToken)
 	{
 		List<SalesOrderRowJson> beersAvailable = new(); 
 		foreach (var row in body.Rows)
 		{
-			var availabilities = await availabilityServices.GetByFilterAsync(b => b.BeerId.Equals(row.BeerId),
+			var availabilities = await warehouseService.GetByFilterAsync(b => b.BeerId.Equals(row.BeerId),
 				1, 10, cancellationToken);
 			if (availabilities.Results.Any())
 				beersAvailable.Add(row);

@@ -6,14 +6,14 @@ namespace BrewUp.DomainModel.Entities.Sales;
 
 public class SalesOrder : AggregateRoot
 {
-	internal readonly SalesOrderId _salesOrderId;
-	internal readonly SalesOrderNumber _salesOrderNumber;
-	internal readonly OrderDate _orderDate;
+	internal readonly SalesOrderId _salesOrderId = default!;
+	internal readonly SalesOrderNumber _salesOrderNumber = default!;
+	internal readonly OrderDate _orderDate = default!;
 
-	internal readonly CustomerId _customerId;
-	internal readonly CustomerName _customerName;
+	internal readonly CustomerId _customerId = default!;
+	internal readonly CustomerName _customerName = default!;
 
-	internal readonly IEnumerable<SalesOrderRow> _rows;
+	internal readonly IEnumerable<SalesOrderRow> _rows = Enumerable.Empty<SalesOrderRow>();
 
 	protected SalesOrder()
 	{
