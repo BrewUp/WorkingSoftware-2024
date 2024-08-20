@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BrewUp.DomainModel.Services;
 
-public sealed class WarehousesDomainService([FromKeyedServices("warehouses")] IRepository repository) : IWarehousesDomainService
+public sealed class WarehouseService([FromKeyedServices("warehouse")] IRepository repository) : IWarehouseService
 {
 	public async Task UpdateAvailabilityDueToProductionOrderAsync(BeerId beerId, BeerName beerName, Quantity quantity,
 		CancellationToken cancellationToken)

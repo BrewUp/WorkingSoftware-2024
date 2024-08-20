@@ -33,17 +33,17 @@ builder.Services.AddSwaggerGen(setup => setup.SwaggerDoc("v1", new OpenApiInfo()
 
 builder.Services.AddMongoDb(builder.Configuration.GetSection("BrewUp:MongoDbSettings").Get<MongoDbSettings>()!);
 
-builder.Services.AddKeyedScoped<IRepository, SalesRepository>("sales");
-builder.Services.AddKeyedScoped<IRepository, WarehousesRepository>("warehouses");
+builder.Services.AddKeyedScoped<IRepository, Saleepository>("sale");
+builder.Services.AddKeyedScoped<IRepository, WarehouseRepository>("warehouse");
 
 builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddScoped<ISalesDomainService, SalesDomainService>();
+builder.Services.AddScoped<ISalesOrderService, SalesOrderService>();
 builder.Services.AddScoped<ISalesQueryService, SalesQueryService>();
 builder.Services.AddScoped<IQueries<SalesOrder>, SalesOrderQueries>();
 
 builder.Services.AddValidatorsFromAssemblyContaining<SetAvailabilityValidator>();
 builder.Services.AddSingleton<ValidationHandler>();
-builder.Services.AddScoped<IWarehousesDomainService, WarehousesDomainService>();
+builder.Services.AddScoped<IWarehouseService, BrewUp.DomainModel.Services.WarehouseService>();
 builder.Services.AddScoped<IAvailabilityQueryService, AvailabilityQueryService>();
 builder.Services.AddScoped<IQueries<Availability>, AvailabilityQueries>();
 
@@ -64,7 +64,7 @@ salesGroup.MapGet("/", SalesService.HandleGetOrders)
 	.WithName("GetSalesOrders");
 
 //Warehouses
-var warehousesGroup = app.MapGroup("/v1/wareHouses/").WithTags("Warehouses");
+var warehousesGroup = app.MapGroup("/v1/warehouses/").WithTags("Warehouses");
 warehousesGroup.MapPost("/availabilities", WarehousesService.HandleSetAvailabilities)
 	.Produces(StatusCodes.Status400BadRequest)
 	.Produces(StatusCodes.Status200OK)
