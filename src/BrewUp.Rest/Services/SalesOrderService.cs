@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace BrewUp.Rest.Services;
 
-public static class SalesService
+public static class SalesOrderService
 {
 	public static async Task<Results<Created, NotFound>> HandleCreateSalesOrder(ISalesOrderService salesOrderService, SalesOrderJson body, CancellationToken cancellationToken)
 	{

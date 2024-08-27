@@ -5,12 +5,12 @@ using MongoDB.Driver;
 
 namespace BrewUp.Infrastructure.MongoDb;
 
-public class Saleepository : IRepository
+public class SaleRepository : IRepository
 {
 	private readonly IMongoDatabase _database;
 	private readonly ILogger _logger;
 
-	public Saleepository(IMongoClient mongoClient,
+	public SaleRepository(IMongoClient mongoClient,
 		ILoggerFactory loggerFactory)
 	{
 		_logger = loggerFactory.CreateLogger(GetType());

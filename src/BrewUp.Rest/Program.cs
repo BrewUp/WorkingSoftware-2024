@@ -33,11 +33,11 @@ builder.Services.AddSwaggerGen(setup => setup.SwaggerDoc("v1", new OpenApiInfo()
 
 builder.Services.AddMongoDb(builder.Configuration.GetSection("BrewUp:MongoDbSettings").Get<MongoDbSettings>()!);
 
-builder.Services.AddKeyedScoped<IRepository, Saleepository>("sale");
+builder.Services.AddKeyedScoped<IRepository, SaleRepository>("sale");
 builder.Services.AddKeyedScoped<IRepository, WarehouseRepository>("warehouse");
 
 builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddScoped<ISalesOrderService, SalesOrderService>();
+builder.Services.AddScoped<ISalesOrderService, BrewUp.DomainModel.Services.SalesOrderService>();
 builder.Services.AddScoped<ISalesQueryService, SalesQueryService>();
 builder.Services.AddScoped<IQueries<SalesOrder>, SalesOrderQueries>();
 
@@ -53,12 +53,12 @@ app.UseCors("CorsPolicy");
 
 //Sales
 var salesGroup = app.MapGroup("/v1/sales/").WithTags("Sales");
-salesGroup.MapPost("/", SalesService.HandleCreateSalesOrder)
+salesGroup.MapPost("/", BrewUp.Rest.Services.SalesOrderService.HandleCreateSalesOrder)
 	.Produces(StatusCodes.Status400BadRequest)
 	.Produces(StatusCodes.Status201Created)
 	.WithName("CreateSalesOrder");
 
-salesGroup.MapGet("/", SalesService.HandleGetOrders)
+salesGroup.MapGet("/", BrewUp.Rest.Services.SalesOrderService.HandleGetOrders)
 	.Produces(StatusCodes.Status404NotFound)
 	.Produces(StatusCodes.Status200OK)
 	.WithName("GetSalesOrders");
