@@ -9,7 +9,7 @@ public class InfrastructureModule : IModule
 	public bool IsEnabled => true;
 	public int Order => 90;
 
-	public IServiceCollection RegisterModule(WebApplicationBuilder builder)
+	public IServiceCollection Register(WebApplicationBuilder builder)
 	{
 		builder.Services.AddMongoDb(builder.Configuration.GetSection("BrewUp:MongoDbSettings").Get<MongoDbSettings>()!);
 
@@ -19,5 +19,5 @@ public class InfrastructureModule : IModule
 		return builder.Services;
 	}
 
-	public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints) => endpoints;
+	WebApplication IModule.Configure(WebApplication app) => app;
 }

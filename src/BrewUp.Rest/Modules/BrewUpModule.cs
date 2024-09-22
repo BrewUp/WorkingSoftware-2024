@@ -8,7 +8,8 @@ public class BrewUpModule : IModule
 	public bool IsEnabled => true;
 	public int Order => 0;
 
-	public IServiceCollection RegisterModule(WebApplicationBuilder builder) => builder.Services.AddMediator();
+	public IServiceCollection Register(WebApplicationBuilder builder) => builder.Services.AddMediator();
 
-	public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints) => endpoints.MapMediatorEndpoints();
+	WebApplication IModule.Configure(WebApplication app) => app.MapMediatorEndpoints();
+	
 }

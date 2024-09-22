@@ -9,9 +9,9 @@ namespace BrewUp.Mediator.Endpoints;
 
 public static class MediatorEndpoints
 {
-	public static IEndpointRouteBuilder MapMediatorEndpoints(this IEndpointRouteBuilder endpoints)
+	public static WebApplication MapMediatorEndpoints(this WebApplication app)
 	{
-		var group = endpoints.MapGroup("/v1/brewup/")
+		var group = app.MapGroup("/v1/brewup/")
 			.WithTags("BrewUp");
 
 		group.MapPost("/", HandleCreateOrder)
@@ -19,7 +19,7 @@ public static class MediatorEndpoints
 			.Produces(StatusCodes.Status201Created)
 			.WithName("OrderBeers");
 
-		return endpoints;
+		return app;
 	}
 
 	public static async Task<IResult> HandleCreateOrder(
