@@ -9,7 +9,7 @@ public class MediatorFitnessTests
     [Fact]
     public void Should_MediatorArchitecture_BeCompliant()
     {
-        var types = Types.InAssembly(typeof(BrewUpFacade).Assembly);
+        var types = Types.InAssembly(typeof(BrewUpMediator).Assembly);
 
         var forbiddenAssemblies = new List<string>
         {

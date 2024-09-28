@@ -23,7 +23,7 @@ public static class MediatorEndpoints
 	}
 
 	public static async Task<IResult> HandleCreateOrder(
-		IBrewUpFacade brewUpFacade,
+		IBrewUpMediator mediator,
 		IValidator<SalesOrderJson> validator,
 		ValidationHandler validationHandler,
 		SalesOrderJson body,
@@ -34,7 +34,7 @@ public static class MediatorEndpoints
 		if (!validationHandler.IsValid)
 			return Results.BadRequest(validationHandler.Errors);
 
-		var orderId = await brewUpFacade.CreateOrderAsync(body, cancellationToken);
+		var orderId = await mediator.CreateOrderAsync(body, cancellationToken);
 
 		return Results.Created($"/v1/brewup/orders/{orderId}", orderId);
 	}

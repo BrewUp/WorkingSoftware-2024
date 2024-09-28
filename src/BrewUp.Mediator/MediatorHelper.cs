@@ -13,7 +13,7 @@ public static class MediatorHelper
 		services.AddValidatorsFromAssemblyContaining<SalesOrderValidator>();
 		services.AddSingleton<ValidationHandler>();
 
-		services.AddScoped<IBrewUpFacade, BrewUpFacade>();
+		services.AddScoped<IBrewUpMediator, BrewUpMediator>();
 
 		return services;
 	}

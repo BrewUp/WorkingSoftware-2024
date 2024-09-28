@@ -1,11 +1,10 @@
 ﻿using BrewUp.Sales.Facade;
 using BrewUp.Shared.Contracts;
-using BrewUp.Shared.Entities;
 using BrewUp.Warehouses.Facade;
 
 namespace BrewUp.Mediator;
 
-public class BrewUpFacade(ISalesFacade salesFacade, IWarehousesFacade warehouseFacade) : IBrewUpFacade
+public class BrewUpMediator(ISalesFacade salesFacade, IWarehousesFacade warehouseFacade) : IBrewUpMediator
 {
 	public async Task<string> CreateOrderAsync(SalesOrderJson body, CancellationToken cancellationToken)
 	{
@@ -20,9 +19,9 @@ public class BrewUpFacade(ISalesFacade salesFacade, IWarehousesFacade warehouseF
 
 		// Prepare the list of rows that are available for sale
 		List<SalesOrderRowJson> rowsForSale = (from row in body.Rows
-											   let beerAvailability = availabilities.Find(a => a.BeerId == row.BeerId.ToString())
-											   where beerAvailability != null && beerAvailability.Availability.Available >= row.Quantity.Value
-											   select row).ToList();
+																					 let beerAvailability = availabilities.Find(a => a.BeerId == row.BeerId.ToString())
+																					 where beerAvailability != null && beerAvailability.Availability.Available >= row.Quantity.Value
+																					 select row).ToList();
 
 		if (rowsForSale.Count == 0)
 		{
@@ -31,10 +30,5 @@ public class BrewUpFacade(ISalesFacade salesFacade, IWarehousesFacade warehouseF
 
 		body = body with { Rows = rowsForSale };
 		return await salesFacade.CreateOrderAsync(body, cancellationToken);
-	}
-
-	public Task<PagedResult<SalesOrderJson>> GetOrdersAsync(CancellationToken cancellationToken)
-	{
-		return salesFacade.GetOrdersAsync(cancellationToken);
 	}
 }
