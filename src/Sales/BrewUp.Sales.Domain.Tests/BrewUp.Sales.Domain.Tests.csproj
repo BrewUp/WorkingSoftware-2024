@@ -29,4 +29,8 @@
     <ProjectReference Include="..\BrewUp.Sales.SharedKernel\BrewUp.Sales.SharedKernel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entities\CloseSalesOrderSuccessfully.cs" />
+  </ItemGroup>
+
 </Project>

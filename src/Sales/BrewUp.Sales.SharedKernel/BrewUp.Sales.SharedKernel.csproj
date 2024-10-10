@@ -19,4 +19,8 @@
     <ProjectReference Include="..\..\BrewUp.Shared\BrewUp.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Commands\CloseSalesOrder.cs" />
+  </ItemGroup>
+
 </Project>
