@@ -1,11 +1,11 @@
 ﻿using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
-using BrewUp.Shared.Entities;
+using BrewUp.Shared.ReadModel;
 
 namespace BrewUp.Sales.ReadModel.Dtos;
 
-public class SalesOrder : EntityBase
+public class SalesOrder : DtoBase
 {
 	public string SalesOrderNumber { get; private set; } = new(string.Empty);
 	public DateTime OrderDate { get; private set; } = DateTime.MinValue;

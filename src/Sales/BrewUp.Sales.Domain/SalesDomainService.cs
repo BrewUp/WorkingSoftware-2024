@@ -1,5 +1,4 @@
 ﻿using BrewUp.Sales.Domain.Entities;
-using BrewUp.Sales.Domain.Helper;
 using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
@@ -15,6 +14,6 @@ public sealed class SalesDomainService([FromKeyedServices("sales")] IRepository 
 	{
 		var aggregate = SalesOrder.CreateSalesOrder(salesOrderId, salesOrderNumber, orderDate, customerId, customerName, rows);
 
-		await repository.InsertAsync(aggregate.MapToReadModel(), cancellationToken);
+		await repository.InsertAsync(aggregate, cancellationToken);
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using BrewUp.Shared.CustomTypes;
 using BrewUp.Shared.ReadModel;
-using BrewUp.Warehouses.Domain.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BrewUp.Warehouses.Domain;
@@ -11,6 +10,6 @@ public sealed class WarehousesDomainService([FromKeyedServices("warehouses")] IR
 		CancellationToken cancellationToken)
 	{
 		var aggregate = Entities.Availability.CreateAvailability(beerId, beerName, quantity);
-		await repository.InsertAsync(aggregate.MapToReadModel(), cancellationToken);
+		await repository.InsertAsync(aggregate, cancellationToken);
 	}
 }
