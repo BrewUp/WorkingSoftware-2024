@@ -3,7 +3,7 @@ using BrewUp.Sales.ReadModel.Services;
 using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
-using BrewUp.Shared.Entities;
+using BrewUp.Shared.DomainModel;
 
 namespace BrewUp.Sales.Facade;
 

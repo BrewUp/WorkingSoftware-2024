@@ -20,7 +20,7 @@ public static class DomainHelper
 	{
 		return ReadModel.Dtos.SalesOrder.Create(salesOrder._salesOrderId, salesOrder._salesOrderNumber,
 						salesOrder._orderDate, salesOrder._customerId, salesOrder._customerName,
-									salesOrder._rows.Select(r => new SalesOrderRowJson
+									salesOrder._rows.Select(r => new ReadModel.Dtos.SalesOrderRow
 									{
 										BeerId = r._beerId.Value,
 										BeerName = r._beerName.Value,

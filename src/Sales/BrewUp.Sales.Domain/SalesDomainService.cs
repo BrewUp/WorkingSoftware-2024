@@ -2,7 +2,7 @@
 using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
-using BrewUp.Shared.ReadModel;
+using BrewUp.Shared.DomainModel;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BrewUp.Sales.Domain;

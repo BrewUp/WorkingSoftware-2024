@@ -13,14 +13,14 @@ public class SalesOrder : DtoBase
 	public Guid CustomerId { get; private set; } = Guid.Empty;
 	public string CustomerName { get; private set; } = string.Empty;
 
-	public IEnumerable<SalesOrderRowJson> Rows { get; private set; } = Enumerable.Empty<SalesOrderRowJson>();
+	public IEnumerable<SalesOrderRow> Rows { get; private set; } = Enumerable.Empty<SalesOrderRow>();
 
 	protected SalesOrder()
 	{
 	}
 
 	public static SalesOrder Create(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, OrderDate orderDate, CustomerId customerId,
-		CustomerName customerName, IEnumerable<SalesOrderRowJson> rows)
+		CustomerName customerName, IEnumerable<SalesOrderRow> rows)
 	{
 		return new SalesOrder
 		{
@@ -35,6 +35,7 @@ public class SalesOrder : DtoBase
 		};
 	}
 
-	public SalesOrderJson ToJson() =>
-		new(Id, SalesOrderNumber, CustomerId, CustomerName, OrderDate, Rows);
+	public SalesOrderJson ToJson() =>	new(Id, SalesOrderNumber, CustomerId, CustomerName, OrderDate, Rows.Select(r => r.ToJson()));
+
 }
+

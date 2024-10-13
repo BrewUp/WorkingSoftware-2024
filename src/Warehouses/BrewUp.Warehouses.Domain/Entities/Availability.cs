@@ -1,5 +1,5 @@
 ﻿using BrewUp.Shared.CustomTypes;
-using BrewUp.Shared.Entities;
+using BrewUp.Shared.DomainModel;
 
 namespace BrewUp.Warehouses.Domain.Entities;
 

@@ -1,5 +1,5 @@
 ﻿using BrewUp.Shared.Contracts;
-using BrewUp.Shared.Entities;
+using BrewUp.Shared.DomainModel;
 
 namespace BrewUp.Warehouses.ReadModel.Services;
 

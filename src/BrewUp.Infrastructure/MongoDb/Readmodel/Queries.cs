@@ -1,4 +1,4 @@
-﻿using BrewUp.Shared.Entities;
+﻿using BrewUp.Shared.DomainModel;
 using BrewUp.Shared.ReadModel;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;

@@ -1,5 +1,4 @@
-﻿using BrewUp.Shared.Entities;
-using BrewUp.Shared.ReadModel;
+﻿using BrewUp.Shared.DomainModel;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 

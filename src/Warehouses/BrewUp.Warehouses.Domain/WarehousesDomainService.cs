@@ -1,5 +1,5 @@
 ﻿using BrewUp.Shared.CustomTypes;
-using BrewUp.Shared.ReadModel;
+using BrewUp.Shared.DomainModel;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BrewUp.Warehouses.Domain;

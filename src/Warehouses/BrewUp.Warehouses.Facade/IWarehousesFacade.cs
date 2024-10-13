@@ -1,5 +1,5 @@
 ﻿using BrewUp.Shared.Contracts;
-using BrewUp.Shared.Entities;
+using BrewUp.Shared.DomainModel;
 using BrewUp.Warehouses.SharedKernel.Contracts;
 
 namespace BrewUp.Warehouses.Facade;

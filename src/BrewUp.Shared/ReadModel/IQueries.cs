@@ -1,4 +1,4 @@
-﻿using BrewUp.Shared.Entities;
+﻿using BrewUp.Shared.DomainModel;
 using System.Linq.Expressions;
 
 namespace BrewUp.Shared.ReadModel

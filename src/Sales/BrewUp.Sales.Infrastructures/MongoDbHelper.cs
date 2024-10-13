@@ -1,4 +1,4 @@
-﻿using BrewUp.Shared.ReadModel;
+﻿using BrewUp.Shared.DomainModel;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BrewUp.Sales.Infrastructures;
