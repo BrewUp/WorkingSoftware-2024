@@ -23,7 +23,7 @@ public class SalesOrder : AggregateRoot
 	}
 
 	internal static SalesOrder CreateSalesOrder(SalesOrderId salesOrderId, Guid correlationId, SalesOrderNumber salesOrderNumber,
-		OrderDate orderDate, CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowJson> rows)
+		OrderDate orderDate, CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowDto> rows)
 	{
 		// Check SalesOrder invariants
 
@@ -31,7 +31,7 @@ public class SalesOrder : AggregateRoot
 	}
 
 	private SalesOrder(SalesOrderId salesOrderId, Guid correlationId, SalesOrderNumber salesOrderNumber, OrderDate orderDate,
-		CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowJson> rows)
+		CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowDto> rows)
 	{		
 		RaiseEvent(new SalesOrderCreated(salesOrderId, correlationId, salesOrderNumber, orderDate, customerId, customerName, rows));
 	}

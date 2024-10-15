@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using Muflone;
 using Muflone.Persistence;
 using Muflone.Transport.RabbitMQ;
-using Muflone.Transport.RabbitMQ.Abstracts;
 using Muflone.Transport.RabbitMQ.Factories;
 using Muflone.Transport.RabbitMQ.Models;
 
@@ -23,8 +22,8 @@ public static class RabbitMqHelper
 		var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
 		var rabbitMqConfiguration = new RabbitMQConfiguration(rabbitMqSettings.Host, rabbitMqSettings.Username,
-			rabbitMqSettings.Password, rabbitMqSettings.ExchangeCommandName, rabbitMqSettings.ExchangeEventName);
-		var mufloneConnectionFactory = new MufloneConnectionFactory(rabbitMqConfiguration, loggerFactory);
+			rabbitMqSettings.Password, rabbitMqSettings.ExchangeCommandName, rabbitMqSettings.ExchangeEventName, "WarehouseClient");
+		var mufloneConnectionFactory = new RabbitMQConnectionFactory(rabbitMqConfiguration, loggerFactory);
 
 		services.AddMufloneTransportRabbitMQ(loggerFactory, rabbitMqConfiguration);
 

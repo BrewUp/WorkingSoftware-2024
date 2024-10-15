@@ -2,7 +2,7 @@
 
 namespace BrewUp.Shared.Contracts;
 
-public class SalesOrderRowJson
+public class SalesOrderRowDto
 {
 	public Guid BeerId { get; set; } = Guid.Empty;
 	public string BeerName { get; set; } = string.Empty;

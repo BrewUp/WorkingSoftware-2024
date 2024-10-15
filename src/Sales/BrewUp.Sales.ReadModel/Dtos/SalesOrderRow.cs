@@ -10,7 +10,7 @@ public class SalesOrderRow
 	public Quantity Quantity { get; set; } = default!;
 	public Price Price { get; set; } = default!;
 
-	internal SalesOrderRowJson ToJson => new()
+	internal SalesOrderRowDto ToJson => new()
 	{
 		BeerId = new Guid(BeerId),
 		BeerName = BeerName,

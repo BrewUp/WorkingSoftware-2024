@@ -16,7 +16,7 @@ public sealed class UpdateAvailabilityDueToProductionOrderCommandHandler : Comma
 	{
 		try
 		{
-			var aggregate = await Repository.GetByIdAsync<Availability>(command.BeerId.Value);
+			var aggregate = await Repository.GetByIdAsync<Availability>(command.BeerId);
 			aggregate.UpdateAvailability(command.Quantity, command.MessageId);
 
 			await Repository.SaveAsync(aggregate, Guid.NewGuid());
