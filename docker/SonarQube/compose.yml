@@ -1,0 +1,25 @@
+name: brewup-sonarqube
+services:
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    ports:
+      - "9999:9000"
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-logs:/opt/sonarqube/logs
+      - sonarqube-extensions:/opt/sonarqube/extensions
+    labels:
+      - io.portainer.accesscontrol.public=true
+
+volumes:
+  sonarqube-data:
+    external: true
+    name: sonarqube-data
+  sonarqube-logs:
+    external: true
+    name: sonarqube-logs
+  sonarqube-extensions:
+    external: true
+    name: sonarqube-extensions
